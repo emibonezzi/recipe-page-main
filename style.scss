@@ -10,19 +10,159 @@ $light-grey: hsl(30, 18%, 87%);
 $wenge-brown: hsl(30, 10%, 34%);
 $dark-charcoal: hsl(24, 5%, 18%);
 
-h1 {
-  font-family: $headings-font;
+body {
+  background-color: $eggshell;
 }
 
-p {
+main {
+  display: flex;
+  margin: 10% 0;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  padding-inline-start: 15px;
+}
+
+li {
+  // span {
+  //   position: relative;
+  //   left: 20px;
+  // }
+  padding-inline-start: 18px;
+  &::marker {
+    font-weight: bold;
+    color: $nutmeg;
+  }
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+p,
+li,
+span {
   font-family: $paragraphs-font;
   font-size: 16px;
+  color: $wenge-brown;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.divider {
+  padding-bottom: 20px;
+  border-bottom: 1px solid $light-grey;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 20px;
+  background-color: $white;
+
+  img {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+}
+
+.card-header {
+  padding: 40px;
+  padding-bottom: 0px;
+}
+
+.card-body {
+  padding: 0px 40px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  font-family: $headings-font;
+  font-size: 2em;
+  color: $nutmeg;
+}
+
+.main-title {
+  font-weight: 400;
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: $dark-charcoal;
+}
+
+.note {
+  background-color: $rose-white;
+  padding: 10px 25px;
+
+  h1 {
+    font-family: $paragraphs-font;
+    color: $dark-raspberry;
+    font-size: 1.5em;
+  }
+
+  li::marker {
+    color: $dark-raspberry;
+  }
+}
+
+.nutrition-table {
+  .divider {
+    padding-bottom: 14px;
+    padding-top: 14px;
+  }
+  .bold {
+    color: $nutmeg;
+  }
+
+  .divider:last-child {
+    border: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 .attribution {
   font-size: 11px;
+  margin: 30px 0px;
   text-align: center;
   a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+  }
+  main {
+    margin: 0;
+  }
+  .card-header {
+    padding: 0;
+    img {
+      border-radius: 0px;
+    }
+  }
+
+  .main-title {
+    font-size: 2em;
+    line-height: 30px;
+  }
+
+  .card-body {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
